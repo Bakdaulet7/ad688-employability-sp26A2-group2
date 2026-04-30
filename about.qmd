@@ -89,15 +89,6 @@ format:
       </li>
 
       <li>
-        <strong>PwC AI Jobs Barometer (2025)</strong> — 
-        Workers with AI skills can earn significantly higher wages, with strong productivity impact.
-        <br>
-        <a href="https://www.pwc.com/gx/en/issues/data-and-analytics/artificial-intelligence/jobs-barometer.html" target="_blank">
-          View Report
-        </a>
-      </li>
-
-      <li>
         <strong>Payscale (2024)</strong> — 
         Employers are actively paying premiums for AI-related skills across industries.
         <br>
