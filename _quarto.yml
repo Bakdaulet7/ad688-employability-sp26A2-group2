@@ -1,0 +1,44 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AI Salary Disparities"
+  description: "Salary Disparities Across Disciplines — Who benefits most from AI's rise?"
+  favicon: "images/favicon.png"
+
+  navbar:
+    background: "#0f172a"
+    foreground: "#f1f5f9"
+    title: "AI · SALARY · 2024"
+    left:
+      - text: "Findings"
+        href: index.qmd
+      - text: "Methodology"
+        href: methodology.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - icon: github
+        href: https://github.com/
+        aria-label: GitHub
+
+  page-footer:
+    background: "#0f172a"
+    foreground: "#94a3b8"
+    left: "© 2026 · Hasnat & Bakdaulet"
+    center: "Built with Quarto"
+    right: "Lightcast US · May–Sep 2024"
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    grid:
+      sidebar-width: 0px
+      body-width: 1200px
+      margin-width: 0px

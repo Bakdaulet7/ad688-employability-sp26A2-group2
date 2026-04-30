@@ -1,0 +1,588 @@
+/* ============================================================
+   AI SALARY DISPARITIES — SITE STYLES
+   Authors: Hasnat & Bakdaulet
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── Root Variables ───────────────────────────────────────── */
+:root {
+  --navy:    #0f172a;
+  --navy-2:  #1e293b;
+  --navy-3:  #334155;
+  --sky:     #0ea5e9;
+  --sky-2:   #38bdf8;
+  --green:   #1D9E75;
+  --green-2: #9DCFB7;
+  --orange:  #D85A30;
+  --amber:   #f59e0b;
+  --slate:   #64748b;
+  --slate-2: #94a3b8;
+  --light:   #f1f5f9;
+  --white:   #ffffff;
+  --border:  #e2e8f0;
+  --radius:  10px;
+  --shadow:  0 4px 24px rgba(15,23,42,.08);
+  --shadow-lg: 0 12px 48px rgba(15,23,42,.14);
+
+  /* Aliases used by embedded chart HTML (originally Anthropic vars) */
+  --color-text-primary:    #0f172a;
+  --color-text-secondary:  #334155;
+  --color-text-tertiary:   #64748b;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--navy-3);
+  background: #fafbfc;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--sky);
+  text-decoration: none;
+  transition: color .2s;
+}
+a:hover { color: var(--amber); text-decoration: none; }
+
+code, pre {
+  font-family: 'DM Mono', monospace;
+  font-size: .875em;
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
+.navbar {
+  background: var(--navy) !important;
+  padding: .75rem 1.5rem;
+  border-bottom: 2px solid var(--sky);
+  box-shadow: 0 2px 16px rgba(14,165,233,.15);
+}
+
+.navbar-brand {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--sky) !important;
+  letter-spacing: .12em;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #94a3b8 !important;
+  padding: .5rem .9rem !important;
+  border-radius: 6px;
+  transition: all .2s;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--white) !important;
+  background: rgba(14,165,233,.15);
+}
+
+/* ── Hero Section ─────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #162032 55%, #1a2744 100%);
+  color: var(--white);
+  padding: 6rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(14,165,233,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245,158,11,.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  background: rgba(14,165,233,.12);
+  border: 1px solid rgba(14,165,233,.3);
+  padding: .35rem .85rem;
+  border-radius: 50px;
+  margin-bottom: 1.75rem;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+  letter-spacing: -.03em;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--sky-2), var(--sky));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 720px;
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(148,163,184,.2);
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
+.hero-meta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--slate-2);
+}
+
+.hero-meta-value {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+/* ── Section Containers ───────────────────────────────────── */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+}
+
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: .6rem;
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 .75rem;
+  letter-spacing: -.025em;
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--slate);
+  max-width: 720px;
+  margin: 0 0 2rem;
+}
+
+/* ── Visualization Card ───────────────────────────────────── */
+.viz-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  box-shadow: var(--shadow);
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+  transition: all .25s;
+}
+
+.viz-card:hover {
+  border-color: rgba(14,165,233,.4);
+  box-shadow: var(--shadow-lg);
+}
+
+.viz-header {
+  padding: 1.75rem 2rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.viz-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--sky);
+  line-height: 1;
+  min-width: 60px;
+  background: linear-gradient(135deg, var(--sky), var(--sky-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -.04em;
+}
+
+.viz-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: .35rem;
+}
+
+.viz-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0 0 .25rem;
+  letter-spacing: -.02em;
+}
+
+.viz-explanation {
+  padding: 1.25rem 2rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(14,165,233,.02) 0%, transparent 100%);
+}
+
+.viz-explanation p {
+  font-size: 1rem;
+  color: var(--navy-3);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.viz-explanation p + p {
+  margin-top: .75rem;
+}
+
+.viz-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* ── Insight badges ───────────────────────────────────────── */
+.insight-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.insight-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--sky);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all .2s;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.insight-stat {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--sky);
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+
+.insight-label {
+  font-size: .92rem;
+  color: var(--navy-3);
+  line-height: 1.45;
+}
+
+/* ── Authors strip ────────────────────────────────────────── */
+.authors-strip {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+}
+
+.authors-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.authors-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.authors-names {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.author-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(14,165,233,.08);
+  border: 1px solid rgba(14,165,233,.2);
+  padding: .35rem .85rem;
+  border-radius: 50px;
+  font-size: .9rem;
+}
+
+.author-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--sky);
+  border-radius: 50%;
+}
+
+.authors-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: .78rem;
+  color: var(--slate);
+}
+
+/* ── About / Methodology Pages ────────────────────────────── */
+.content-block {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.content-block h2 {
+  font-size: 1.6rem;
+  margin-top: 2.5rem;
+  margin-bottom: .85rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.content-block h2::before {
+  content: '';
+  position: absolute;
+  left: 0; top: .35rem;
+  width: 4px; height: 1.4rem;
+  background: var(--sky);
+  border-radius: 2px;
+}
+
+.content-block h3 {
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  margin-bottom: .5rem;
+  color: var(--navy);
+}
+
+.content-block p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--navy-3);
+  margin-bottom: 1rem;
+}
+
+.content-block ul, .content-block ol {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--navy-3);
+  padding-left: 1.4rem;
+}
+
+.content-block li {
+  margin-bottom: .5rem;
+}
+
+.content-block li strong {
+  color: var(--navy);
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.spec-item {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.spec-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: .25rem;
+}
+
+.spec-value {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+/* ── Author Cards (About Page) ────────────────────────────── */
+.author-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.author-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: all .25s;
+  box-shadow: var(--shadow);
+}
+
+.author-card:hover {
+  border-color: var(--sky);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.author-avatar {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--sky), var(--sky-2));
+  color: var(--white);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  letter-spacing: -.02em;
+}
+
+.author-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin: 0 0 .25rem;
+}
+
+.author-role {
+  font-family: 'DM Mono', monospace;
+  font-size: .78rem;
+  color: var(--sky);
+  letter-spacing: .06em;
+  margin-bottom: .85rem;
+}
+
+.author-bio {
+  font-size: .92rem;
+  color: var(--navy-3);
+  line-height: 1.6;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.page-footer {
+  background: var(--navy) !important;
+  border-top: 2px solid rgba(14,165,233,.2);
+  color: #64748b !important;
+  font-size: .85rem;
+}
+
+/* ── Quarto Overrides ─────────────────────────────────────── */
+#quarto-content { padding: 0; }
+
+main.content {
+  padding: 0;
+  max-width: 100%;
+}
+
+.quarto-title-block { display: none; }
+
+.page-columns.page-full { padding: 0; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding: 4rem 1.25rem 3rem; }
+  .hero h1 { font-size: 2rem; }
+  .section { padding: 3rem 1.25rem; }
+  .insight-row { grid-template-columns: 1fr; }
+  .author-grid { grid-template-columns: 1fr; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .viz-header { padding: 1.25rem 1.25rem 0; flex-direction: column; gap: .5rem; }
+  .viz-explanation { padding: 1rem 1.25rem 1.5rem; }
+  .viz-body { padding: 1rem 1.25rem 1.5rem; }
+  .viz-number { font-size: 1.6rem; }
+  .viz-headline { font-size: 1.1rem; }
+}

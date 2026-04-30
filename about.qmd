@@ -1,0 +1,92 @@
+---
+title: "About"
+format:
+  html:
+    page-layout: full
+---
+
+```{=html}
+<!-- HERO -->
+<div class="hero" style="padding:5rem 2rem 4rem;">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">● The Project · The Authors</div>
+    <h1>About <span>this analysis</span></h1>
+    <p class="hero-sub">
+      This site is a class project for Boston University's MS in Applied Business Analytics, exploring how
+      generative AI is reshaping the US labor market through the lens of posted salaries.
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="content-block">
+
+    <div class="section-eyebrow">▸ The motivation</div>
+    <h2 class="section-title" style="margin-bottom:1rem;">Why this question matters</h2>
+    <p>
+      Every quarter brings new headlines about AI either creating six-figure jobs or wiping them out. Both stories
+      can be true at the same time — and they are. We wanted to see, in actual posted-salary data, where the AI
+      premium is real, where it's small, and where it inverts.
+    </p>
+    <p>
+      The three views on the home page are designed to be read together. The skill chart shows the supply-side
+      story (which technical skills employers will pay for). The experience chart shows the career-stage story
+      (where in your career the AI label adds the most value). The state chart shows the geography story (where
+      that premium concentrates).
+    </p>
+
+    <h2>What we found, in one sentence</h2>
+    <p>
+      <strong>The AI premium is real but uneven</strong> — it's biggest for entry-level workers learning to build
+      AI systems in cloud-heavy tech states, and it shrinks toward zero for senior workers, traditional analyst
+      tools, and regions where AI hiring leans toward analyst roles rather than ML engineering.
+    </p>
+
+    <div class="section-eyebrow" style="margin-top:3rem;">▸ The team</div>
+    <h2 class="section-title" style="margin-bottom:1rem;">Authors</h2>
+
+    <div class="author-grid">
+
+      <div class="author-card">
+        <div class="author-avatar">H</div>
+        <div class="author-name">Hasnat</div>
+        <div class="author-role">CO-AUTHOR · DATA ANALYSIS</div>
+        <p class="author-bio">
+          MS Applied Business Analytics candidate at Boston University. Focused on the data pipeline,
+          skill classification, and the methodology behind the AI vs. non-AI cuts.
+        </p>
+      </div>
+
+      <div class="author-card">
+        <div class="author-avatar">B</div>
+        <div class="author-name">Bakdaulet</div>
+        <div class="author-role">CO-AUTHOR · VISUALIZATION</div>
+        <p class="author-bio">
+          MS Applied Business Analytics candidate at Boston University and Senior Software Developer at Umojo.
+          Focused on the chart design, interactivity, and turning the analysis into a publishable site.
+        </p>
+      </div>
+
+    </div>
+
+    <h2>Tools we used</h2>
+    <ul>
+      <li><strong>Python</strong> — pandas for data wrangling, scipy for the statistical cuts</li>
+      <li><strong>Lightcast US</strong> — primary data source (29,798 full-time postings, May–Sep 2024)</li>
+      <li><strong>Chart.js</strong> — interactive visualization layer</li>
+      <li><strong>Quarto</strong> — site framework, with custom CSS for the design system</li>
+      <li><strong>GitHub Pages</strong> — hosting and continuous deployment</li>
+    </ul>
+
+    <h2>Citation</h2>
+    <p>
+      If you reference this work, please cite as:
+    </p>
+    <p style="background:#fff; border:1.5px solid var(--border); border-radius:10px; padding:1rem 1.25rem; font-family:'DM Mono',monospace; font-size:.88rem; color:var(--navy-3); line-height:1.6;">
+      Hasnat & Bakdaulet (2026). <em>Salary Disparities Across Disciplines: Who Benefits Most from AI's Rise?</em>
+      Boston University, MS Applied Business Analytics.
+    </p>
+
+  </div>
+</div>
+```

@@ -1,0 +1,8 @@
+/.quarto/
+/.luarc.json
+.DS_Store
+*.log
+node_modules/
+.Rproj.user/
+
+**/*.quarto_ipynb

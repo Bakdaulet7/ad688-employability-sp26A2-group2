@@ -1,0 +1,115 @@
+---
+title: "Methodology"
+format:
+  html:
+    page-layout: full
+---
+
+```{=html}
+<!-- HERO -->
+<div class="hero" style="padding:5rem 2rem 4rem;">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">● Data & Methods</div>
+    <h1>How we measured the <span>AI premium</span></h1>
+    <p class="hero-sub">
+      Every figure on this site comes from one source: the Lightcast US job postings dataset for May–September 2024.
+      Below is exactly how we cleaned the data, classified "AI" postings, and computed the premiums.
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="content-block">
+
+    <div class="section-eyebrow">▸ At a glance</div>
+    <h2 class="section-title" style="margin-bottom:1.5rem;">Data specifications</h2>
+
+    <div class="spec-grid">
+      <div class="spec-item">
+        <div class="spec-label">Source</div>
+        <div class="spec-value">Lightcast US</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Time period</div>
+        <div class="spec-value">May – Sep 2024</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Total postings</div>
+        <div class="spec-value">29,798</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">With experience field</div>
+        <div class="spec-value">23,116</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Coverage</div>
+        <div class="spec-value">All 50 US states</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-label">Posting type</div>
+        <div class="spec-value">Full-time, with salary</div>
+      </div>
+    </div>
+
+    <h2>1. Defining an "AI posting"</h2>
+    <p>
+      A posting was classified as <strong>AI-related</strong> if it mentioned at least one skill from a curated list
+      of AI/ML technologies — including Generative AI, Machine Learning, TensorFlow / PyTorch, MLOps, NLP, and
+      Computer Vision. Postings without any of those tags formed the comparison "non-AI" group.
+    </p>
+    <p>
+      This is intentionally a <strong>broad definition</strong>: a job that requires "machine learning" experience
+      counts as AI even if the title is "Data Scientist." We chose breadth over precision because narrow
+      title-matching would miss most of the AI-adjacent labor market.
+    </p>
+
+    <h2>2. Computing the premium</h2>
+    <p>
+      For every cut (skill, experience bucket, state) we computed:
+    </p>
+    <ul>
+      <li><strong>Median posted salary</strong> for AI postings in that cut</li>
+      <li><strong>Median posted salary</strong> for non-AI postings in the same cut</li>
+      <li><strong>Premium = (AI median − non-AI median) / non-AI median × 100</strong></li>
+    </ul>
+    <p>
+      We used medians (not means) because posted-salary distributions are heavily right-skewed by a few
+      executive-level roles. Medians are robust to those outliers and represent the typical posting more honestly.
+    </p>
+
+    <h2>3. Filters and thresholds</h2>
+    <ul>
+      <li><strong>Salary required:</strong> postings without a posted salary range were dropped entirely</li>
+      <li><strong>Experience cuts:</strong> only postings with a minimum-years-experience field (n = 23,116)</li>
+      <li><strong>State cuts:</strong> only states with ≥200 total postings — smaller states are flagged as directional</li>
+      <li><strong>Skill cuts:</strong> only skills with ≥30 AI postings to avoid noisy comparisons</li>
+    </ul>
+
+    <h2>4. What this is — and isn't</h2>
+    <p>
+      These are <strong>posted salaries</strong>, not realized wages. They reflect what employers offer at the door,
+      not what workers ultimately earn after negotiation, bonuses, or equity. They also reflect the
+      <strong>composition</strong> of the AI labor market, not a controlled comparison. A skill premium of "+27% for AWS"
+      doesn't mean adding AWS to your résumé will raise your salary 27% — it means the kinds of jobs that list AWS
+      tend to pay 27% more on average.
+    </p>
+    <p>
+      Treat every figure on this site as <strong>association, not causation</strong>. The patterns are real and
+      consistent across thousands of postings, but they describe what's happening in the market — not what would
+      happen if individual workers acquired specific skills.
+    </p>
+
+    <h2>5. Limitations</h2>
+    <ul>
+      <li><strong>Geography:</strong> some states have small AI-posting samples. Rhode Island and South Carolina look
+          like outliers but may revert with larger samples</li>
+      <li><strong>Seniority:</strong> "minimum years experience" is what employers <em>ask for</em>, not what hires
+          actually have. Real seniority distributions may differ</li>
+      <li><strong>Skill overlap:</strong> postings often list 5–15 skills; a single skill's premium reflects the
+          full bundle on that posting, not the marginal value of that skill alone</li>
+      <li><strong>Time window:</strong> 5 months of 2024 data. The AI labor market is moving fast; figures may shift</li>
+    </ul>
+
+  </div>
+</div>
+```

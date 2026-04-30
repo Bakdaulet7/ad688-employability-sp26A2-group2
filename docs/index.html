@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>AI Salary Disparities</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c4a0ec27df06d107f209e312098e7b75.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">AI · SALARY · 2024</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Findings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methodology.html"> 
+<span class="menu-text">Methodology</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">AI Salary Disparities</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- ════════════════════════════ HERO ════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">● Lightcast US · 29,798 postings · May–Sep 2024</div>
+    <h1>Salary disparities across<br>disciplines — who benefits<br>most from <span>AI's rise?</span></h1>
+    <p class="hero-sub">
+      A data-driven look at how the AI boom is reshaping pay across skills, experience levels, and geographies.
+      Three interactive views, drawn from nearly 30,000 US job postings, reveal where the AI premium is real,
+      where it's hype, and where it inverts entirely.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Source</div>
+        <div class="hero-meta-value">Lightcast US</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Postings</div>
+        <div class="hero-meta-value">29,798</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Period</div>
+        <div class="hero-meta-value">May – Sep 2024</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Authors</div>
+        <div class="hero-meta-value">Hasnat &amp; Bakdaulet</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ AUTHORS STRIP ═══════════════════════ -->
+<div class="authors-strip">
+  <div class="authors-strip-inner">
+    <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <span class="authors-label">Authored by</span>
+      <div class="authors-names">
+        <span class="author-chip"><span class="author-dot"></span>Hasnat</span>
+        <span class="author-chip"><span class="author-dot"></span>Bakdaulet</span>
+      </div>
+    </div>
+    <div class="authors-meta">Boston University · MS Applied Business Analytics</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SECTION INTRO ═══════════════════════ -->
+<div class="section" style="padding-bottom:2rem;">
+  <div class="section-eyebrow">▸ Three views, one question</div>
+  <h2 class="section-title anchored">Where AI actually pays — and where it doesn't</h2>
+  <p class="section-lead">
+    The "AI premium" is real, but it's not evenly distributed. Some skills, career stages, and states see
+    double-digit pay bumps; others see the opposite. Each chart below is interactive — hover for exact figures.
+  </p>
+</div>
+
+<!-- ════════════════════════ VISUAL 1 ════════════════════════ -->
+<div class="section" style="padding-top:0;">
+
+  <div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">01</div>
+      <div>
+        <div class="viz-eyebrow">Skill-level analysis</div>
+        <h3 class="viz-headline anchored">Generative AI commands a 49% premium — Excel pays 26% less</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        At the top of the salary ladder sit the skills that <strong>build</strong> AI systems — Generative AI (+49%),
+        Kubernetes (+34%), Docker (+29%), and AWS (+27%). At the bottom sit the tools that <strong>consume</strong>
+        their outputs — Excel (−26%), Power BI (−17%), and Tableau (−16%) all post salaries well below market median.
+      </p>
+      <p>
+        The takeaway: <strong>employers are paying steep premiums for AI infrastructure and ML engineering skills</strong>,
+        while traditional analyst tooling has become commoditized. This is association, not causation — but the gap
+        is striking and consistent across thousands of postings.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:13px; color:var(--slate); margin-bottom:4px;">Median salary of postings mentioning each skill, vs. postings that don't</div>
+      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May–Sep 2024 · n = 29,798 full-time postings with salary</div>
+      <div style="display:flex; gap:16px; margin-bottom:8px; font-size:12px; color:var(--navy-3);">
+        <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; border-radius:2px; background:#1D9E75;"></span>Pays above market</span>
+        <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; border-radius:2px; background:#D85A30;"></span>Pays below market</span>
+      </div>
+      <div style="position:relative; width:100%; height:760px;">
+        <canvas id="skillPremium" role="img" aria-label="Horizontal bar chart of salary premium by skill."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:8px; line-height:1.5;">
+        Read as association, not causation: the skill mix on a posting reflects the kind of role being hired for.
+        A "−26% Excel" posting is typically a different job from a "+49% Generative AI" posting, not the same job paid less.
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ VISUAL 2 ════════════════════════ -->
+  <div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">02</div>
+      <div>
+        <div class="viz-eyebrow">Experience-level analysis</div>
+        <h3 class="viz-headline anchored">The AI premium is largest for entry-level — and disappears at the top</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        For entry-level workers (0–2 years), AI postings pay <strong>19.5% more</strong> than non-AI peers — a $15K bump
+        on a median ~$80K base. The gap shrinks to roughly 10% for mid- and senior-level roles, then collapses to essentially
+        zero at lead/principal (9+ years).
+      </p>
+      <p>
+        The pattern suggests AI is currently a <strong>ladder for early-career workers</strong>, not a multiplier at
+        the top. Once you're senior enough, leadership and domain expertise dominate compensation, and the AI label
+        no longer adds a separate premium.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:12px; color:var(--slate); margin-bottom:14px;">
+        Median posted salary by minimum-years-experience bucket · Lightcast US, May–Sep 2024 · n = 23,116 postings with experience specified
+      </div>
+      <div style="position:relative; width:100%; height:380px;">
+        <canvas id="expChart" role="img" aria-label="Grouped bar chart of median salary by experience level."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
+        AI postings command a $15K bump for entry-level roles but the gap closes by senior level and inverts slightly
+        at lead/principal — at the top of the ladder, seniority dominates and AI no longer pays a premium.
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════ VISUAL 3 ════════════════════════ -->
+  <div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">03</div>
+      <div>
+        <div class="viz-eyebrow">Geographic analysis</div>
+        <h3 class="viz-headline anchored">Where the AI premium is biggest — not always where you'd guess</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        Among major tech states, <strong>Washington (+33%)</strong> and <strong>California (+20%)</strong> show the
+        steepest AI premiums — consistent with cloud and AI hyperscalers concentrated there. Smaller-volume states
+        like Rhode Island and South Carolina top the chart, but with thin samples (~30 AI postings each), treat as directional.
+      </p>
+      <p>
+        <strong>Kentucky inverts the pattern</strong> with a −17% premium: its AI postings skew toward lower-paying
+        analyst work rather than ML engineering, a reminder that "AI jobs" isn't a monolithic category — composition
+        matters as much as label.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:12px; color:var(--slate); margin-bottom:14px;">
+        AI vs non-AI median salary gap, states with ≥200 postings · Lightcast US, May–Sep 2024
+      </div>
+      <div style="position:relative; width:100%; height:460px;">
+        <canvas id="stateChart" role="img" aria-label="Horizontal bar chart of AI premium by state."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
+        Among major tech states, Washington (+33%) and California (+20%) show the steepest premiums — consistent with
+        cloud and AI hyperscalers concentrated there. Smaller-volume states like Rhode Island and South Carolina top
+        the chart but the AI sample sizes are small (~30–35 postings), so treat as directional. Kentucky inverts:
+        its AI postings skew toward lower-paying analyst work.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ KEY INSIGHTS ═══════════════════════ -->
+  <div class="section-eyebrow" style="margin-top:1rem;">▸ At a glance</div>
+  <h2 class="section-title anchored">The headline numbers</h2>
+
+  <div class="insight-row">
+    <div class="insight-card">
+      <div class="insight-stat">+49%</div>
+      <div class="insight-label">Generative AI premium — the largest pay gap of any skill in the dataset</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-stat">+19.5%</div>
+      <div class="insight-label">AI premium for entry-level workers — drops to near-zero at lead/principal</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-stat">−26%</div>
+      <div class="insight-label">Excel salary discount — traditional analyst tools pay below market</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════ CHART SCRIPTS ════════════════════════ -->
+<script>
+// Wait for Chart.js to load
+function initCharts() {
+  if (typeof Chart === 'undefined') {
+    setTimeout(initCharts, 100);
+    return;
+  }
+
+  // ─────────── CHART 1: Skill Premium ───────────
+  const skillData = [
+    {s: 'Generative AI', v: 49.1, n: 84},
+    {s: 'Kubernetes', v: 34.2, n: 387},
+    {s: 'Docker', v: 28.7, n: 328},
+    {s: 'AWS', v: 27.3, n: 1953},
+    {s: 'Spark', v: 23.8, n: 535},
+    {s: 'Azure', v: 19.9, n: 2213},
+    {s: 'TensorFlow / PyTorch', v: 17.8, n: 103},
+    {s: 'Computer Vision', v: 17.8, n: 37},
+    {s: 'Machine Learning', v: 17.0, n: 1984},
+    {s: 'MLOps', v: 16.2, n: 119},
+    {s: 'NLP', v: 14.0, n: 140},
+    {s: 'Hadoop', v: 5.7, n: 634},
+    {s: 'Python', v: -1.8, n: 5312},
+    {s: 'SQL', v: -13.2, n: 10242},
+    {s: 'R', v: -13.5, n: 2647},
+    {s: 'Tableau', v: -15.9, n: 5720},
+    {s: 'Power BI', v: -17.4, n: 4669},
+    {s: 'Excel', v: -26.4, n: 6194},
+  ];
+  new Chart(document.getElementById('skillPremium'), {
+    type: 'bar',
+    data: {
+      labels: skillData.map(d => d.s),
+      datasets: [{
+        data: skillData.map(d => d.v),
+        backgroundColor: skillData.map(d => d.v >= 0 ? '#1D9E75' : '#D85A30'),
+        borderWidth: 0,
+        borderRadius: 3,
+        barPercentage: 0.78,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 28 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const d = skillData[ctx.dataIndex];
+              return `${d.v > 0 ? '+' : ''}${d.v}% premium · ${d.n.toLocaleString()} postings`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: (v) => (v > 0 ? '+' : '') + v + '%' },
+          title: { display: true, text: 'Salary premium vs. postings without this skill', color: '#64748b', font: { size: 12 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: '#334155', font: { size: 12 } }
+        }
+      },
+      animation: { duration: 700 }
+    }
+  });
+
+  // ─────────── CHART 2: Experience Level ───────────
+  const expLabels = ['Entry (0–2 yrs)', 'Mid (3–5 yrs)', 'Senior (6–8 yrs)', 'Lead/Principal (9+ yrs)'];
+  const aiData    = [96100, 121650, 147650, 148700];
+  const nonAiData = [80400, 110000, 133650, 149695];
+  const premiums  = ['+19.5%', '+10.6%', '+10.5%', '−0.7%'];
+
+  new Chart(document.getElementById('expChart'), {
+    type: 'bar',
+    data: {
+      labels: expLabels,
+      datasets: [
+        { label: 'AI postings',    data: aiData,    backgroundColor: '#1D9E75', borderRadius: 3, borderWidth: 0 },
+        { label: 'Non-AI postings', data: nonAiData, backgroundColor: '#A8B5C4', borderRadius: 3, borderWidth: 0 },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'top', labels: { color: '#334155', font: { size: 12 } } },
+        tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: $${ctx.raw.toLocaleString()}` } },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: (v) => '$' + (v/1000) + 'K' },
+          title: { display: true, text: 'Median posted salary', color: '#64748b' }
+        },
+        x: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
+      },
+      animation: { duration: 700 },
+    },
+    plugins: [{
+      id: 'premiumLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx, scales: { x, y } } = chart;
+        ctx.save();
+        ctx.font = '600 12px sans-serif';
+        ctx.textAlign = 'center';
+        expLabels.forEach((_, i) => {
+          const top = Math.min(y.getPixelForValue(aiData[i]), y.getPixelForValue(nonAiData[i]));
+          const xpos = x.getPixelForValue(i);
+          ctx.fillStyle = premiums[i].startsWith('−') ? '#D85A30' : '#1D9E75';
+          ctx.fillText(premiums[i], xpos, top - 8);
+        });
+        ctx.restore();
+      }
+    }]
+  });
+
+  // ─────────── CHART 3: State Premium ───────────
+  const stateData = [
+    {s: 'Rhode Island', v: 52.2, n: 244, hl: false},
+    {s: 'South Carolina', v: 33.2, n: 239, hl: false},
+    {s: 'Washington', v: 32.6, n: 945, hl: true},
+    {s: 'Oregon', v: 24.0, n: 560, hl: false},
+    {s: 'Nevada', v: 23.2, n: 270, hl: false},
+    {s: 'California', v: 20.3, n: 3868, hl: true},
+    {s: 'Kansas', v: 20.0, n: 303, hl: false},
+    {s: 'Missouri', v: 19.0, n: 545, hl: false},
+    {s: 'Utah', v: 19.0, n: 274, hl: false},
+    {s: 'Maryland', v: 18.3, n: 552, hl: false},
+    {s: 'New York', v: 17.8, n: 1946, hl: true},
+    {s: 'Massachusetts', v: 14.5, n: 737, hl: true},
+    {s: 'Texas', v: 9.6, n: 2537, hl: true},
+    {s: 'Kentucky', v: -17.4, n: 288, hl: false},
+  ];
+  new Chart(document.getElementById('stateChart'), {
+    type: 'bar',
+    data: {
+      labels: stateData.map(d => d.s),
+      datasets: [{
+        data: stateData.map(d => d.v),
+        backgroundColor: stateData.map(d => d.v < 0 ? '#D85A30' : (d.hl ? '#1D9E75' : '#9DCFB7')),
+        borderWidth: 0,
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 28 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => {
+          const d = stateData[ctx.dataIndex];
+          return `${d.v > 0 ? '+' : ''}${d.v}% premium · ${d.n.toLocaleString()} total postings`;
+        }}}
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: (v) => (v > 0 ? '+' : '') + v + '%' },
+          title: { display: true, text: 'AI vs non-AI median salary gap', color: '#64748b' }
+        },
+        y: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
+      },
+      animation: { duration: 700 }
+    }
+  });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCharts);
+} else {
+  initCharts();
+}
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 · Hasnat &amp; Bakdaulet</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Built with Quarto</p>
+</div>
+    <div class="nav-footer-right">
+<p>Lightcast US · May–Sep 2024</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
