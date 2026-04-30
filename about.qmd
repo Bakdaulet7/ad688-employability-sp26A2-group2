@@ -77,6 +77,53 @@ format:
       <li><strong>Quarto</strong> — site framework, with custom CSS for the design system</li>
       <li><strong>GitHub Pages</strong> — hosting and continuous deployment</li>
     </ul>
+    <h2>Research & Sources</h2>
+    <ul>
+      <li>
+        <strong>Lightcast (2025)</strong> — 
+        AI skills command ~28% salary premium based on 1.3B+ job postings.
+        <br>
+        <a href="https://www.prnewswire.com/news-releases/new-lightcast-report-ai-skills-command-28-salary-premium-as-demand-shifts-beyond-tech-industry-302511141.html" target="_blank">
+          View Report
+        </a>
+      </li>
+
+      <li>
+        <strong>PwC AI Jobs Barometer (2025)</strong> — 
+        Workers with AI skills can earn significantly higher wages, with strong productivity impact.
+        <br>
+        <a href="https://www.pwc.com/gx/en/issues/data-and-analytics/artificial-intelligence/jobs-barometer.html" target="_blank">
+          View Report
+        </a>
+      </li>
+
+      <li>
+        <strong>Payscale (2024)</strong> — 
+        Employers are actively paying premiums for AI-related skills across industries.
+        <br>
+        <a href="https://www.payscale.com/compensation-trends/ai-skills-are-in-demand-and-employers-are-paying-big-bucks-for-them" target="_blank">
+          View Article
+        </a>
+      </li>
+
+      <li>
+        <strong>Fortune (2025)</strong> — 
+        AI talent commands higher salaries as demand outpaces supply.
+        <br>
+        <a href="https://fortune.com/2025/08/11/ai-talent-salary-premium/" target="_blank">
+          Read Article
+        </a>
+      </li>
+
+      <li>
+        <strong>Stanford HAI / AI Index Report (2025)</strong> — 
+        Global trends show increasing demand and compensation for AI skills.
+        <br>
+        <a href="https://aiindex.stanford.edu/report/" target="_blank">
+          View Report
+        </a>
+      </li>
+    </ul>
 
     <h2>Citation</h2>
     <p>
