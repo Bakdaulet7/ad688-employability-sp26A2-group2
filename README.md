@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📊 Salary Disparities Across Disciplines
 
 > **Who benefits most from AI's rise?** A data-driven look at the AI salary premium across skills, experience levels, and US states.
@@ -80,3 +81,7 @@ each chart has its own data array (`skillData`, `expLabels/aiData/nonAiData`, `s
 ## 📜 License
 
 Class project · Boston University · MS Applied Business Analytics · 2026
+=======
+# ad688-employability-sp26A2-group2
+Final project Cloud Computing
+>>>>>>> 95993378e46096e28bf4d3980643a9df81f17e84
