@@ -9,15 +9,14 @@ format:
 ---
 
 ```{=html}
-<!-- ════════════════════════════ HERO ════════════════════════════ -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">● Lightcast US · 29,798 postings · May–Sep 2024</div>
+    <div class="hero-eyebrow">Lightcast US · 29,798 postings · May-Sep 2024</div>
     <h1>Salary disparities across<br>disciplines — who benefits<br>most from <span>AI's rise?</span></h1>
     <p class="hero-sub">
       A data-driven look at how the AI boom is reshaping pay across skills, experience levels, and geographies.
-      Three interactive views, drawn from nearly 30,000 US job postings, reveal where the AI premium is real,
-      where it's hype, and where it inverts entirely.
+      Six interactive views, drawn from nearly 30,000 US job postings, reveal where the salary story is strongest,
+      where the AI premium is real, where it's hype, and where it inverts entirely.
     </p>
     <div class="hero-meta">
       <div class="hero-meta-item">
@@ -30,7 +29,7 @@ format:
       </div>
       <div class="hero-meta-item">
         <div class="hero-meta-label">Period</div>
-        <div class="hero-meta-value">May – Sep 2024</div>
+        <div class="hero-meta-value">May - Sep 2024</div>
       </div>
       <div class="hero-meta-item">
         <div class="hero-meta-label">Authors</div>
@@ -40,7 +39,6 @@ format:
   </div>
 </div>
 
-<!-- ═══════════════════════ AUTHORS STRIP ═══════════════════════ -->
 <div class="authors-strip">
   <div class="authors-strip-inner">
     <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
@@ -54,19 +52,19 @@ format:
   </div>
 </div>
 
-<!-- ═══════════════════════ SECTION INTRO ═══════════════════════ -->
 <div class="section" style="padding-bottom:2rem;">
-  <div class="section-eyebrow">▸ Three views, one question</div>
+  <div class="section-eyebrow">Six views, one question</div>
   <h2 class="section-title">Where AI actually pays — and where it doesn't</h2>
   <p class="section-lead">
-    The "AI premium" is real, but it's not evenly distributed. Some skills, career stages, and states see
-    double-digit pay bumps; others see the opposite. Each chart below is interactive — hover for exact figures.
+    The "AI premium" is real, but it's not evenly distributed. Some software skills, work modes,
+    career stages, and states see double-digit pay bumps; others see the opposite. Each chart below
+    is interactive — hover for exact figures.
   </p>
 </div>
 
-<!-- ════════════════════════ VISUALs Hasnat ════════════════════════ -->
- <div class="section" style="padding-top:0;">
-<div class="viz-card">
+<div class="section" style="padding-top:0;">
+
+  <div class="viz-card">
     <div class="viz-header">
       <div class="viz-number">01</div>
       <div>
@@ -167,13 +165,9 @@ format:
     </div>
   </div>
 
-
-<!-- ════════════════════════ VISUAL 1 ════════════════════════ -->
-
-
   <div class="viz-card">
     <div class="viz-header">
-      <div class="viz-number">01</div>
+      <div class="viz-number">04</div>
       <div>
         <div class="viz-eyebrow">Skill-level analysis</div>
         <h3 class="viz-headline">Generative AI commands a 49% premium — Excel pays 26% less</h3>
@@ -184,7 +178,7 @@ format:
       <p>
         At the top of the salary ladder sit the skills that <strong>build</strong> AI systems — Generative AI (+49%),
         Kubernetes (+34%), Docker (+29%), and AWS (+27%). At the bottom sit the tools that <strong>consume</strong>
-        their outputs — Excel (−26%), Power BI (−17%), and Tableau (−16%) all post salaries well below market median.
+        their outputs — Excel (-26%), Power BI (-17%), and Tableau (-16%) all post salaries well below market median.
       </p>
       <p>
         The takeaway: <strong>employers are paying steep premiums for AI infrastructure and ML engineering skills</strong>,
@@ -195,7 +189,7 @@ format:
 
     <div class="viz-body">
       <div style="font-size:13px; color:var(--slate); margin-bottom:4px;">Median salary of postings mentioning each skill, vs. postings that don't</div>
-      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May–Sep 2024 · n = 29,798 full-time postings with salary</div>
+      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May-Sep 2024 · n = 29,798 full-time postings with salary</div>
       <div style="display:flex; gap:16px; margin-bottom:8px; font-size:12px; color:var(--navy-3);">
         <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; border-radius:2px; background:#1D9E75;"></span>Pays above market</span>
         <span style="display:flex; align-items:center; gap:6px;"><span style="width:10px; height:10px; border-radius:2px; background:#D85A30;"></span>Pays below market</span>
@@ -205,15 +199,13 @@ format:
       </div>
       <div style="font-size:11px; color:var(--slate); margin-top:8px; line-height:1.5;">
         Read as association, not causation: the skill mix on a posting reflects the kind of role being hired for.
-        A "−26% Excel" posting is typically a different job from a "+49% Generative AI" posting, not the same job paid less.
       </div>
     </div>
   </div>
 
-  <!-- ════════════════════════ VISUAL 2 ════════════════════════ -->
   <div class="viz-card">
     <div class="viz-header">
-      <div class="viz-number">02</div>
+      <div class="viz-number">05</div>
       <div>
         <div class="viz-eyebrow">Experience-level analysis</div>
         <h3 class="viz-headline">The AI premium is largest for entry-level — and disappears at the top</h3>
@@ -222,7 +214,7 @@ format:
 
     <div class="viz-explanation">
       <p>
-        For entry-level workers (0–2 years), AI postings pay <strong>19.5% more</strong> than non-AI peers — a $15K bump
+        For entry-level workers (0-2 years), AI postings pay <strong>19.5% more</strong> than non-AI peers — a $15K bump
         on a median ~$80K base. The gap shrinks to roughly 10% for mid- and senior-level roles, then collapses to essentially
         zero at lead/principal (9+ years).
       </p>
@@ -235,22 +227,21 @@ format:
 
     <div class="viz-body">
       <div style="font-size:12px; color:var(--slate); margin-bottom:14px;">
-        Median posted salary by minimum-years-experience bucket · Lightcast US, May–Sep 2024 · n = 23,116 postings with experience specified
+        Median posted salary by minimum-years-experience bucket · Lightcast US, May-Sep 2024 · n = 23,116 postings with experience specified
       </div>
       <div style="position:relative; width:100%; height:380px;">
         <canvas id="expChart" role="img" aria-label="Grouped bar chart of median salary by experience level."></canvas>
       </div>
       <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
         AI postings command a $15K bump for entry-level roles but the gap closes by senior level and inverts slightly
-        at lead/principal — at the top of the ladder, seniority dominates and AI no longer pays a premium.
+        at lead/principal.
       </div>
     </div>
   </div>
 
-  <!-- ════════════════════════ VISUAL 3 ════════════════════════ -->
   <div class="viz-card">
     <div class="viz-header">
-      <div class="viz-number">03</div>
+      <div class="viz-number">06</div>
       <div>
         <div class="viz-eyebrow">Geographic analysis</div>
         <h3 class="viz-headline">Where the AI premium is biggest — not always where you'd guess</h3>
@@ -261,64 +252,57 @@ format:
       <p>
         Among major tech states, <strong>Washington (+33%)</strong> and <strong>California (+20%)</strong> show the
         steepest AI premiums — consistent with cloud and AI hyperscalers concentrated there. Smaller-volume states
-        like Rhode Island and South Carolina top the chart, but with thin samples (~30 AI postings each), treat as directional.
+        like Rhode Island and South Carolina top the chart, but with thin samples, treat as directional.
       </p>
       <p>
-        <strong>Kentucky inverts the pattern</strong> with a −17% premium: its AI postings skew toward lower-paying
-        analyst work rather than ML engineering, a reminder that "AI jobs" isn't a monolithic category — composition
-        matters as much as label.
+        <strong>Kentucky inverts the pattern</strong> with a -17% premium: its AI postings skew toward lower-paying
+        analyst work rather than ML engineering.
       </p>
     </div>
 
     <div class="viz-body">
       <div style="font-size:12px; color:var(--slate); margin-bottom:14px;">
-        AI vs non-AI median salary gap, states with ≥200 postings · Lightcast US, May–Sep 2024
+        AI vs non-AI median salary gap, states with >=200 postings · Lightcast US, May-Sep 2024
       </div>
       <div style="position:relative; width:100%; height:460px;">
         <canvas id="stateChart" role="img" aria-label="Horizontal bar chart of AI premium by state."></canvas>
       </div>
       <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
-        Among major tech states, Washington (+33%) and California (+20%) show the steepest premiums — consistent with
-        cloud and AI hyperscalers concentrated there. Smaller-volume states like Rhode Island and South Carolina top
-        the chart but the AI sample sizes are small (~30–35 postings), so treat as directional. Kentucky inverts:
-        its AI postings skew toward lower-paying analyst work.
+        Among major tech states, Washington (+33%) and California (+20%) show the steepest premiums.
       </div>
     </div>
   </div>
 
-  <!-- ═══════════════════════ KEY INSIGHTS ═══════════════════════ -->
-  <div class="section-eyebrow" style="margin-top:1rem;">▸ At a glance</div>
+  <div class="section-eyebrow" style="margin-top:1rem;">At a glance</div>
   <h2 class="section-title">The headline numbers</h2>
 
   <div class="insight-row">
     <div class="insight-card">
-      <div class="insight-stat">+49%</div>
-      <div class="insight-label">Generative AI premium — the largest pay gap of any skill in the dataset</div>
+      <div class="insight-stat">$137K</div>
+      <div class="insight-label">Average salary for Java postings — highest among the provided software skills</div>
     </div>
     <div class="insight-card">
-      <div class="insight-stat">+19.5%</div>
-      <div class="insight-label">AI premium for entry-level workers — drops to near-zero at lead/principal</div>
+      <div class="insight-stat">$116K</div>
+      <div class="insight-label">Average salary for remote postings — roughly $15.8K above not remote roles</div>
     </div>
     <div class="insight-card">
-      <div class="insight-stat">−26%</div>
-      <div class="insight-label">Excel salary discount — traditional analyst tools pay below market</div>
+      <div class="insight-stat">$125K</div>
+      <div class="insight-label">Average salary in Connecticut — highest among the provided top states</div>
     </div>
   </div>
 
 </div>
 
-<!-- ════════════════════════ CHART SCRIPTS ════════════════════════ -->
 <script>
-// Wait for Chart.js to load
 function initCharts() {
   if (typeof Chart === 'undefined') {
     setTimeout(initCharts, 100);
     return;
   }
 
-    const moneyTick = (v) => '$' + Math.round(v / 1000) + 'K';
+  const moneyTick = (v) => '$' + Math.round(v / 1000) + 'K';
   const moneyTooltip = (v) => '$' + Math.round(v).toLocaleString();
-  // ─────────── CHART 1: Hasnat ───────────
+
   const softwareSkillData = [
     {s: 'Java', v: 137196.448310},
     {s: 'Sql', v: 123800.047170},
@@ -361,7 +345,7 @@ function initCharts() {
       animation: { duration: 700 }
     }
   });
-  // ─────────── CHART 2: Hasnat ───────────
+
   const remoteData = [
     {s: 'Hybrid Remote', v: 114107.098782},
     {s: 'Not Remote', v: 100698.898251},
@@ -401,7 +385,7 @@ function initCharts() {
       animation: { duration: 700 }
     }
   });
-  // ─────────── CHART 3: Hasnat ───────────
+
   const topStateSalaryData = [
     {s: 'Connecticut', v: 124878.200466},
     {s: 'New Jersey', v: 122861.899888},
@@ -451,7 +435,7 @@ function initCharts() {
       animation: { duration: 700 }
     }
   });
-  // ─────────── CHART 1: Skill Premium ───────────
+
   const skillData = [
     {s: 'Generative AI', v: 49.1, n: 84},
     {s: 'Kubernetes', v: 34.2, n: 387},
@@ -472,6 +456,7 @@ function initCharts() {
     {s: 'Power BI', v: -17.4, n: 4669},
     {s: 'Excel', v: -26.4, n: 6194},
   ];
+
   new Chart(document.getElementById('skillPremium'), {
     type: 'bar',
     data: {
@@ -506,27 +491,23 @@ function initCharts() {
           ticks: { color: '#64748b', callback: (v) => (v > 0 ? '+' : '') + v + '%' },
           title: { display: true, text: 'Salary premium vs. postings without this skill', color: '#64748b', font: { size: 12 } }
         },
-        y: {
-          grid: { display: false },
-          ticks: { color: '#334155', font: { size: 12 } }
-        }
+        y: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
       },
       animation: { duration: 700 }
     }
   });
 
-  // ─────────── CHART 2: Experience Level ───────────
-  const expLabels = ['Entry (0–2 yrs)', 'Mid (3–5 yrs)', 'Senior (6–8 yrs)', 'Lead/Principal (9+ yrs)'];
-  const aiData    = [96100, 121650, 147650, 148700];
+  const expLabels = ['Entry (0-2 yrs)', 'Mid (3-5 yrs)', 'Senior (6-8 yrs)', 'Lead/Principal (9+ yrs)'];
+  const aiData = [96100, 121650, 147650, 148700];
   const nonAiData = [80400, 110000, 133650, 149695];
-  const premiums  = ['+19.5%', '+10.6%', '+10.5%', '−0.7%'];
+  const premiums = ['+19.5%', '+10.6%', '+10.5%', '-0.7%'];
 
   new Chart(document.getElementById('expChart'), {
     type: 'bar',
     data: {
       labels: expLabels,
       datasets: [
-        { label: 'AI postings',    data: aiData,    backgroundColor: '#1D9E75', borderRadius: 3, borderWidth: 0 },
+        { label: 'AI postings', data: aiData, backgroundColor: '#1D9E75', borderRadius: 3, borderWidth: 0 },
         { label: 'Non-AI postings', data: nonAiData, backgroundColor: '#A8B5C4', borderRadius: 3, borderWidth: 0 },
       ]
     },
@@ -541,7 +522,7 @@ function initCharts() {
         y: {
           beginAtZero: true,
           grid: { color: 'rgba(128,128,128,0.12)' },
-          ticks: { color: '#64748b', callback: (v) => '$' + (v/1000) + 'K' },
+          ticks: { color: '#64748b', callback: (v) => '$' + (v / 1000) + 'K' },
           title: { display: true, text: 'Median posted salary', color: '#64748b' }
         },
         x: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
@@ -558,7 +539,7 @@ function initCharts() {
         expLabels.forEach((_, i) => {
           const top = Math.min(y.getPixelForValue(aiData[i]), y.getPixelForValue(nonAiData[i]));
           const xpos = x.getPixelForValue(i);
-          ctx.fillStyle = premiums[i].startsWith('−') ? '#D85A30' : '#1D9E75';
+          ctx.fillStyle = premiums[i].startsWith('-') ? '#D85A30' : '#1D9E75';
           ctx.fillText(premiums[i], xpos, top - 8);
         });
         ctx.restore();
@@ -566,7 +547,6 @@ function initCharts() {
     }]
   });
 
-  // ─────────── CHART 3: State Premium ───────────
   const stateData = [
     {s: 'Rhode Island', v: 52.2, n: 244, hl: false},
     {s: 'South Carolina', v: 33.2, n: 239, hl: false},
@@ -583,6 +563,7 @@ function initCharts() {
     {s: 'Texas', v: 9.6, n: 2537, hl: true},
     {s: 'Kentucky', v: -17.4, n: 288, hl: false},
   ];
+
   new Chart(document.getElementById('stateChart'), {
     type: 'bar',
     data: {
@@ -619,11 +600,9 @@ function initCharts() {
   });
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCharts);
 } else {
   initCharts();
 }
 </script>
-```
