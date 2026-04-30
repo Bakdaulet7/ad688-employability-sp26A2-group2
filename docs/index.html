@@ -201,6 +201,109 @@ ul.task-list li input[type="checkbox"] {
   </p>
 </div>
 
+<!-- ════════════════════════ VISUALs Hasnat ════════════════════════ -->
+<div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">01</div>
+      <div>
+        <div class="viz-eyebrow">Software-skill analysis</div>
+        <h3 class="viz-headline anchored">Java leads the listed software skills, with SQL split sharply by label</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        Java postings show the highest average salary in this table at <strong>$137.2K</strong>, followed by Sql at
+        <strong>$123.8K</strong> and .NET at <strong>$121.3K</strong>. Python sits near the middle of the group, while
+        the uppercase SQL category is the lowest at <strong>$103.8K</strong>.
+      </p>
+      <p>
+        The gap suggests skill labels are picking up different role mixes, not just different tools. Backend and
+        platform-oriented software skills cluster higher, while broader database-language postings appear more mixed
+        in seniority and function.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:13px; color:var(--slate); margin-bottom:4px;">Average posted salary by software skill</div>
+      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May-Sep 2024</div>
+      <div style="position:relative; width:100%; height:360px;">
+        <canvas id="softwareSkillSalary" role="img" aria-label="Horizontal bar chart of average salary by software skill."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
+        Salaries are averages from the provided table. Categories are kept exactly as supplied, including separate Sql and SQL labels.
+      </div>
+    </div>
+  </div>
+
+  <div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">02</div>
+      <div>
+        <div class="viz-eyebrow">Remote-work analysis</div>
+        <h3 class="viz-headline anchored">Remote roles edge out onsite roles by roughly $15.8K on average</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        Fully remote postings average <strong>$116.5K</strong>, slightly ahead of postings with no remote designation
+        and hybrid remote roles. Not remote postings average <strong>$100.7K</strong>, making them the clear low point
+        in this table.
+      </p>
+      <p>
+        The result lines up with the idea that remote-friendly roles are often more specialized or compete in broader
+        labor markets, while onsite roles can reflect more local pay bands and a wider range of job families.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:13px; color:var(--slate); margin-bottom:4px;">Average posted salary by remote status</div>
+      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May-Sep 2024</div>
+      <div style="position:relative; width:100%; height:340px;">
+        <canvas id="remoteSalary" role="img" aria-label="Bar chart of average salary by remote status."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
+        [None] is retained as a separate category because the posting did not specify a remote-status label in the provided table.
+      </div>
+    </div>
+  </div>
+
+  <div class="viz-card">
+    <div class="viz-header">
+      <div class="viz-number">03</div>
+      <div>
+        <div class="viz-eyebrow">State salary analysis</div>
+        <h3 class="viz-headline anchored">Connecticut, New Jersey, and Arkansas top the salary ranking</h3>
+      </div>
+    </div>
+
+    <div class="viz-explanation">
+      <p>
+        The top three states are tightly packed: Connecticut averages <strong>$124.9K</strong>, New Jersey
+        <strong>$122.9K</strong>, and Arkansas <strong>$122.2K</strong>. California appears sixth at
+        <strong>$120.8K</strong>, close to Virginia, Vermont, Montana, and Illinois.
+      </p>
+      <p>
+        The spread across the top ten is relatively narrow, about <strong>$6.3K</strong> from Connecticut to
+        Washington, D.C., suggesting the highest-paying geographies are clustered more tightly than the skill-level
+        salary gaps.
+      </p>
+    </div>
+
+    <div class="viz-body">
+      <div style="font-size:13px; color:var(--slate); margin-bottom:4px;">Top 10 states by average posted salary</div>
+      <div style="font-size:12px; color:var(--slate); margin-bottom:12px;">Lightcast US job postings, May-Sep 2024</div>
+      <div style="position:relative; width:100%; height:480px;">
+        <canvas id="topStateSalary" role="img" aria-label="Horizontal bar chart of the top ten states by average salary."></canvas>
+      </div>
+      <div style="font-size:11px; color:var(--slate); margin-top:10px; line-height:1.5;">
+        Values are average posted salaries from the provided table. Washington, D.C. is shown with its full district label in the tooltip.
+      </div>
+    </div>
+  </div>
+
+
 <!-- ════════════════════════ VISUAL 1 ════════════════════════ -->
 <div class="section" style="padding-top:0;">
 
@@ -348,7 +451,139 @@ function initCharts() {
     setTimeout(initCharts, 100);
     return;
   }
+  // ─────────── CHART 1: Hasnat ───────────
+  const softwareSkillData = [
+    {s: 'Java', v: 137196.448310},
+    {s: 'Sql', v: 123800.047170},
+    {s: '.NET', v: 121329.456522},
+    {s: 'Others', v: 117569.947449},
+    {s: 'Python', v: 116640.797641},
+    {s: 'SQL', v: 103836.184206},
+  ];
 
+  new Chart(document.getElementById('softwareSkillSalary'), {
+    type: 'bar',
+    data: {
+      labels: softwareSkillData.map(d => d.s),
+      datasets: [{
+        data: softwareSkillData.map(d => d.v),
+        backgroundColor: softwareSkillData.map((_, i) => i === 0 ? '#1D9E75' : '#A8B5C4'),
+        borderWidth: 0,
+        borderRadius: 3,
+        barPercentage: 0.74,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 34 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => `Average salary: ${moneyTooltip(ctx.raw)}` } }
+      },
+      scales: {
+        x: {
+          min: 90000,
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: moneyTick },
+          title: { display: true, text: 'Average posted salary', color: '#64748b', font: { size: 12 } }
+        },
+        y: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
+      },
+      animation: { duration: 700 }
+    }
+  });
+  // ─────────── CHART 2: Hasnat ───────────
+  const remoteData = [
+    {s: 'Hybrid Remote', v: 114107.098782},
+    {s: 'Not Remote', v: 100698.898251},
+    {s: 'Remote', v: 116455.761715},
+    {s: '[None]', v: 115079.057876},
+  ];
+
+  new Chart(document.getElementById('remoteSalary'), {
+    type: 'bar',
+    data: {
+      labels: remoteData.map(d => d.s),
+      datasets: [{
+        data: remoteData.map(d => d.v),
+        backgroundColor: remoteData.map(d => d.s === 'Remote' ? '#1D9E75' : (d.s === 'Not Remote' ? '#D85A30' : '#A8B5C4')),
+        borderWidth: 0,
+        borderRadius: 3,
+        barPercentage: 0.64,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { top: 18 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => `Average salary: ${moneyTooltip(ctx.raw)}` } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: moneyTick },
+          title: { display: true, text: 'Average posted salary', color: '#64748b' }
+        },
+        x: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
+      },
+      animation: { duration: 700 }
+    }
+  });
+  // ─────────── CHART 3: Hasnat ───────────
+  const topStateSalaryData = [
+    {s: 'Connecticut', v: 124878.200466},
+    {s: 'New Jersey', v: 122861.899888},
+    {s: 'Arkansas', v: 122166.234076},
+    {s: 'Vermont', v: 121737.644860},
+    {s: 'Virginia', v: 121207.365425},
+    {s: 'California', v: 120828.784724},
+    {s: 'Montana', v: 120698.048246},
+    {s: 'Illinois', v: 120415.422669},
+    {s: 'Washington', v: 119686.824056},
+    {s: 'Washington, D.C.', full: 'Washington, D.C. (District of Columbia)', v: 118605.085859},
+  ];
+
+  new Chart(document.getElementById('topStateSalary'), {
+    type: 'bar',
+    data: {
+      labels: topStateSalaryData.map(d => d.s),
+      datasets: [{
+        data: topStateSalaryData.map(d => d.v),
+        backgroundColor: topStateSalaryData.map((d, i) => i < 3 ? '#1D9E75' : (d.s === 'California' ? '#9DCFB7' : '#A8B5C4')),
+        borderWidth: 0,
+        borderRadius: 3,
+        barPercentage: 0.72,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: { padding: { right: 34 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => {
+          const d = topStateSalaryData[ctx.dataIndex];
+          return `${d.full || d.s}: ${moneyTooltip(d.v)}`;
+        }}}
+      },
+      scales: {
+        x: {
+          min: 110000,
+          grid: { color: 'rgba(128,128,128,0.12)' },
+          ticks: { color: '#64748b', callback: moneyTick },
+          title: { display: true, text: 'Average posted salary', color: '#64748b' }
+        },
+        y: { grid: { display: false }, ticks: { color: '#334155', font: { size: 12 } } }
+      },
+      animation: { duration: 700 }
+    }
+  });
   // ─────────── CHART 1: Skill Premium ───────────
   const skillData = [
     {s: 'Generative AI', v: 49.1, n: 84},
